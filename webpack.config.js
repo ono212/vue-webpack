@@ -13,6 +13,7 @@ module.exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
         clean: true
     },
     module: {
@@ -41,5 +42,8 @@ module.exports = {
                 { from: 'static' }//{ from: 'static', to: 'dist'} 어디에서 어디로 파일을 복사해서 넣어줄건지, 이미 위에 경로 지정돼있어서 to는 생략
             ]
         })
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true
+    }
 }
